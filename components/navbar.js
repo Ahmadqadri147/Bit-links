@@ -1,22 +1,26 @@
 import React from 'react'
+import Link from 'next/link'
 
 const navbar = () => {
     return (
         <>
-            <div className="flex justify-between p-5 px-10">
-                <h1 className="text-3xl font-bold pl-8">Linktree</h1>
+            <div className="flex justify-between p-5 px-10 items-center">
+                <Link href="/">
+                    <h1 className="text-3xl font-bold pl-8 text-black">Bit-Tree</h1>
+                </Link>
 
-                <ul className="flex gap-5 pr-80 ">
-                    <li className="cursor-pointer transition duration-300 hover:text-purple-300 hover:scale-105">Home</li>
-                    <li className="cursor-pointer transition duration-300 hover:text-purple-300 hover:scale-105">About</li>
-                    <li className="cursor-pointer transition duration-300 hover:text-purple-300 hover:scale-105">Contact</li>
-                    <li className="cursor-pointer transition duration-300 hover:text-purple-300 hover:scale-105">Pricing</li>
-                    <li className="cursor-pointer transition duration-300 hover:text-purple-300 hover:scale-105">FAQ</li>
-                    <li className="cursor-pointer transition duration-300 hover:text-purple-300 hover:scale-105">Blog</li>
+                <ul className="flex gap-5 text-black/80 font-medium">
+                    <li className="cursor-pointer transition duration-300 hover:text-purple-600 hover:scale-105"><Link href="/">Home</Link></li>
+                    <li className="cursor-pointer transition duration-300 hover:text-purple-600 hover:scale-105">About</li>
+                    <li className="cursor-pointer transition duration-300 hover:text-purple-600 hover:scale-105">Contact</li>
                 </ul>
                 <div className="flex gap-5 ">
-                    <button className="bg-blue-50 hover:bg-blue-100 px-5 py-2 rounded-full">Log in </button>
-                    <button className="bg-purple-300 hover:bg-purple-500 px-5 py-2 rounded-full">Sign up</button>
+                    <Link href="/login">
+                        <button className="bg-black/5 text-black hover:bg-black/10 px-6 py-2 rounded-full border border-black/10 transition">Log in</button>
+                    </Link>
+                    <Link href="/generate">
+                        <button className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-full shadow-lg transition">Sign up</button>
+                    </Link>
                 </div>
             </div>
         </>
