@@ -12,13 +12,13 @@ export async function POST(request) {
     const db = client.db("bit-tree");
     const collection = db.collection("Links");
 
-    // Check if handle already exists
+
     const existingUser = await collection.findOne({ handle: body.handle });
     if (existingUser) {
       return Response.json({ success: false, error: true, message: 'Handle already exists' }, { status: 400 });
     }
 
-    // Insert new user with sanitized data
+
     const result = await collection.insertOne(body);
 
     return Response.json({ success: true, error: false, message: 'Link added successfully', result: result });
